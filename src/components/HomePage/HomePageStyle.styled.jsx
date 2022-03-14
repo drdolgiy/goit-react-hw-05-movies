@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 
- export const Link = styled.NavLink`
-    &.active {
-    color: tomato;
-  }`;
+//  export const Link = styled(NavLink)`
+//     active {
+//     color: tomato;
+//   }`;
 
 export const Nav = styled.nav`
   display: flex;
@@ -12,7 +12,6 @@ export const Nav = styled.nav`
   text-decoration: none;
   font-weigth: 500;
   font-size: 18px;
-
 `;
 
 export const Wrapper = styled.div`
