@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 
 export const MoviesPage = () => {
 
@@ -9,11 +9,6 @@ export const MoviesPage = () => {
         const searchQuery = value.toLowerCase();
         setQuery(searchQuery);
     };
-
-    // useEffect(
-
-    // )
-
 
     return (
         <div>
