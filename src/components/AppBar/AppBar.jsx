@@ -19,7 +19,7 @@ export const AppBar = () => {
                     <Link  to="/movies" >Movies</Link >
                 </Nav>
             </Wrapper>
-            <Outlet/>
+            <Outlet />
         </header>
     )
 }

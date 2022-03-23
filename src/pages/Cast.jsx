@@ -5,7 +5,7 @@ import { getCast } from "services/movieApi";
 
 export const MovieCast = () => {
     const { movieId } = useParams();
-    const posterURL = `https://image.tmdb.org/t/p/w500/`
+    const posterURL = `https://image.tmdb.org/t/p/w300/`
     // const cast = getCast(movieId);
     // console.log(cast)
 
