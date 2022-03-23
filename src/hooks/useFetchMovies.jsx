@@ -10,7 +10,6 @@ export const useFetchMovies = () => {
             setLoading(true);
             try {
                 const movies = await getMovies();
-                // console.log(movies);
                 setMovies(movies);
             } catch (error) {
             } finally {

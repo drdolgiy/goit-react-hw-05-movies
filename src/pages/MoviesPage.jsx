@@ -3,17 +3,12 @@ import { useState, useEffect } from 'react';
 import { getMoviesByQuery } from 'services/movieApi';
 
 export const MoviesPage = () => {
-    // const { movieId } = useParams();
     const [search, setSearch] = useState("");
-    // console.log(search)
     const [data, setData] = useState(null);
-    console.log(data)
     const [searchParams, setSearchParams] = useSearchParams();
-    // console.log(searchParams)
+    
     const query = searchParams.get("query");
-    // console.log(query)
     const location = useLocation();
-    console.log(location);
 
     useEffect(() => { 
         if (!query) {
@@ -25,37 +20,20 @@ export const MoviesPage = () => {
         try {
             const movies = await getMoviesByQuery(query);
             console.log(movies);
-            setData(movies);
-                        
+            setData(movies);    
+            
             } catch (error) {
                 
             }
         }
             fetchMoviesByQuery();
             return
-    }
-        
+    }        
         }, [query])
         
-    //     async function fetchMoviesByQuery() {
-    //     try {
-    //         const movies = await getMoviesByQuery(query);
-    //         console.log(movies);
-    //         setData(movies);
-                        
-    //         } catch (error) {
-                
-    //         }
-    //     }
-    //     fetchMoviesByQuery();
-    // }, [query])
-    
-
     const handleChange = event => {
         const searchQuery = event.target.value.toLowerCase();
-        setSearch(searchQuery);
-        // console.log(searchQuery)
-        
+        setSearch(searchQuery);       
     };
 
     const handleSubmit = event => {
@@ -80,16 +58,14 @@ return(
                     placeholder="Search movies"
                 />
                 <button type="submit">Search</button>
-        </form>
-        {data && (<ul>
-            {data.map(item => (
-                <li key={item.id}>
-                    <Link to={`/movies/${item.id}`} state={{ from: location }}>{item.title}</Link>
-                {/* <p>{item.original_title}</p> */}
-            </li>
-        ))}
-        </ul>)}
-        
+            </form>
+            {data && (<ul>
+                {data.map(item => (
+                    <li key={item.id}>
+                        <Link to={`/movies/${item.id}`} state={{ from: location }}>{item.title}</Link>
+                    </li>
+                ))}
+            </ul>)}        
         </div>
     )    
 };

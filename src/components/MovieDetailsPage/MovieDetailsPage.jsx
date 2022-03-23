@@ -4,9 +4,6 @@ import {  useEffect, useState } from "react";
 // import { useEffect } from "react/cjs/react.production.min";
 // import {Link} from "react-router-dom"
 import { getMoviesById } from "services/movieApi";
-// import { getPoster } from "services/movieApi";
-// import { MoviePoster } from "components/Poster/Poster";
-
   
 export const MovieDetailsPage = () => { 
     const { movieId } = useParams();
@@ -52,8 +49,6 @@ export const MovieDetailsPage = () => {
                 <li><Link  to="reviews" >Reviews</Link ></li>
             </ul>
             <Outlet/>
-        </main>   
-    
-       
+        </main>        
     )
 };

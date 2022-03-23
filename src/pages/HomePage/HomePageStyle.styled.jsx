@@ -1,10 +1,5 @@
 import styled from "@emotion/styled";
 
-//  export const Link = styled(NavLink)`
-//     active {
-//     color: tomato;
-//   }`;
-
 export const Nav = styled.nav`
   display: flex;
   gap: 20px;
