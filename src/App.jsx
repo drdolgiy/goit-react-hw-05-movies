@@ -1,7 +1,7 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { AppBar } from './components/AppBar/AppBar'
-import { MovieDetailsPage } from "./components/MovieDetailsPage/MovieDetailsPage"
+import { AppBar } from './components/AppBar/AppBar';
+import { MovieDetailsPage } from "./components/MovieDetailsPage/MovieDetailsPage";
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage').then(module => ({default: module.HomePage})));
 const MoviesPage = lazy(() => import('./pages/MoviesPage').then(module => ({default: module.MoviesPage})));
