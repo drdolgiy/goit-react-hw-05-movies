@@ -13,8 +13,13 @@ export const MoviesPage = () => {
     const query = searchParams.get("query");
     // console.log(query)
     const location = useLocation();
+    console.log(location);
 
     useEffect(() => { 
+        if (!query) {
+            return
+        };
+        
         if (query) {
             async function fetchMoviesByQuery() {
         try {

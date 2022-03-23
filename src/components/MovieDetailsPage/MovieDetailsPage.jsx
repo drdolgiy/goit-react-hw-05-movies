@@ -1,4 +1,4 @@
-import { useParams, Link, Outlet } from "react-router-dom";
+import { useParams, Link, Outlet, useLocation } from "react-router-dom";
 import {  useEffect, useState } from "react";
 // import { Loader } from "components/Loader/Loader";
 // import { useEffect } from "react/cjs/react.production.min";
@@ -6,10 +6,12 @@ import {  useEffect, useState } from "react";
 import { getMoviesById } from "services/movieApi";
 // import { getPoster } from "services/movieApi";
 // import { MoviePoster } from "components/Poster/Poster";
+
   
 export const MovieDetailsPage = () => { 
     const { movieId } = useParams();
     const posterURL = `https://image.tmdb.org/t/p/w300/`
+    const location = useLocation();
 
     const [movie, setMovie] = useState(null);
     
@@ -27,7 +29,7 @@ export const MovieDetailsPage = () => {
     
     return (          
         <main>
-            <Link to="/">
+            <Link to={location?.state?.from ?? "/"}>
                 <button type="button">Go back</button>
             </Link>        
             {movie && (
